@@ -92,9 +92,7 @@ create table if not exists abate(
 
 create table if not exists abatido(
     nbrinc integer not null,
-    coda integer not null,
     peso integer not null,
-    constraint pk_abatido primary key (nbrinc,coda),
-    constraint fk_abatido_animal foreign key (nbrinc) references animal(nbrinc),
-    constraint fk_abatido_abate foreign key (coda) references abate(coda)
+    constraint pk_abatido primary key (nbrinc),
+    constraint fk_abatido_animal foreign key (nbrinc) references animal(nbrinc)
 );
